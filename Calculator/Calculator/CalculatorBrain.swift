@@ -41,6 +41,8 @@ class CalculatorBrain {
         learnOp(Op.BinaryOperation("+", +))
         learnOp(Op.BinaryOperation("-") { $1 - $0 })
         learnOp(Op.UnaryOperation("√", sqrt))
+        learnOp(Op.UnaryOperation("Sin", sin))
+        learnOp(Op.UnaryOperation("Cos", cos))
 //        knownOps["×"] = Op.BinaryOperation("×", *)
 //        knownOps["÷"] = Op.BinaryOperation("÷") { $1 / $0 }
 //        knownOps["+"] = Op.BinaryOperation("+", +)
