@@ -11,7 +11,10 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var display: UILabel!
+    @IBOutlet weak var history: UILabel!
+    
     var userIsInTheMiddleOfTypingANumber = false
+    var needCommaSeperator = false
     var brain = CalculatorBrain()
     
     var displayValue: Double {
@@ -23,7 +26,7 @@ class ViewController: UIViewController {
             userIsInTheMiddleOfTypingANumber = false
         }
     }
-
+    
     @IBAction func appendDigit(sender: UIButton) {
         let digit = sender.currentTitle!
         if userIsInTheMiddleOfTypingANumber {
@@ -38,8 +41,16 @@ class ViewController: UIViewController {
         userIsInTheMiddleOfTypingANumber = false
         if let result = brain.pushOperand(displayValue) {
             displayValue = result
+            
+            if needCommaSeperator {
+                history.text! += ", \(result)"
+            } else {
+                history.text! += "\(result)"
+                needCommaSeperator = true
+            }
+            
         } else {
-            // Make displayValue into an optional, then set it to nil below
+            // Make displayValue into an optional, then set it to nil below... How do we do this???
             displayValue = 0
         }
     }
@@ -50,6 +61,13 @@ class ViewController: UIViewController {
         }
         
         if let operation = sender.currentTitle {
+            if needCommaSeperator {
+                history.text! += ", " + operation
+            } else {
+                history.text! += operation
+                needCommaSeperator = true
+            }
+            
             if let result = brain.performOperation(operation) {
                 displayValue = result
             } else {
@@ -58,10 +76,11 @@ class ViewController: UIViewController {
         }
     }
     
-    
     @IBAction func clear() {
         brain.clear()
         displayValue = 0
+        history.text = "Hist: "
+        needCommaSeperator = false
     }
 }
 

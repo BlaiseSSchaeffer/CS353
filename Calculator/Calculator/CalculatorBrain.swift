@@ -13,6 +13,7 @@ class CalculatorBrain {
         case Operand(Double)
         case UnaryOperation(String, Double -> Double)
         case BinaryOperation(String, (Double, Double) -> Double)
+        case ConstantOperation(String, Double)
         
         var description: String {
             get {
@@ -23,6 +24,8 @@ class CalculatorBrain {
                     return symbol
                 case .BinaryOperation(let symbol, _):
                     return symbol
+                case .ConstantOperation(let constant, _):
+                    return constant
                 }
             }
         }
@@ -39,10 +42,11 @@ class CalculatorBrain {
         learnOp(Op.BinaryOperation("×", *))
         learnOp(Op.BinaryOperation("÷") { $1 / $0 })
         learnOp(Op.BinaryOperation("+", +))
-        learnOp(Op.BinaryOperation("-") { $1 - $0 })
+        learnOp(Op.BinaryOperation("−") { $1 - $0 })
         learnOp(Op.UnaryOperation("√", sqrt))
-        learnOp(Op.UnaryOperation("Sin", sin))
-        learnOp(Op.UnaryOperation("Cos", cos))
+        learnOp(Op.UnaryOperation("sin", sin))
+        learnOp(Op.UnaryOperation("cos", cos))
+        learnOp(Op.ConstantOperation("π", M_PI))
 //        knownOps["×"] = Op.BinaryOperation("×", *)
 //        knownOps["÷"] = Op.BinaryOperation("÷") { $1 / $0 }
 //        knownOps["+"] = Op.BinaryOperation("+", +)
@@ -83,6 +87,8 @@ class CalculatorBrain {
                         return (operation(operand1, operand2), op2Evaluation.remainingOps)
                     }
                 }
+            case .ConstantOperation(_, let constant):
+                return (constant, remainingOps)
             }
         }
         return (nil, ops)
