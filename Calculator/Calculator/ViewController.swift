@@ -17,12 +17,21 @@ class ViewController: UIViewController {
     var needCommaSeperator = false
     var brain = CalculatorBrain()
     
-    var displayValue: Double {
+    var displayValue: Double? {
         get {
-            return NSNumberFormatter().numberFromString(display.text!)!.doubleValue
+//            return NSNumberFormatter().numberFromString(display.text!)!.doubleValue
+            if let val =  display.text {
+                return NSNumberFormatter().numberFromString(val)!.doubleValue
+            } else {
+                return nil
+            }
         }
         set {
-            display.text = "\(newValue)"
+            if newValue == nil {
+                display.text = "0.0"
+            } else {
+                display.text = "\(newValue!)"
+            }
             userIsInTheMiddleOfTypingANumber = false
         }
     }
@@ -37,11 +46,26 @@ class ViewController: UIViewController {
         }
     }
     
+
+    @IBAction func backspace() {
+        if userIsInTheMiddleOfTypingANumber {
+            if let length = display.text?.characters.count {
+                if length > 1 {
+                    display.text = String(display.text!.characters.dropLast())
+                } else {
+                    display.text = "0.0"
+                    userIsInTheMiddleOfTypingANumber = false
+                }
+            }
+        }
+    }
+    
+    
     @IBAction func enter() {
         userIsInTheMiddleOfTypingANumber = false
-        if let result = brain.pushOperand(displayValue) {
+        if let result = brain.pushOperand(displayValue!) {
             displayValue = result
-            
+        
             if needCommaSeperator {
                 history.text! += ", \(result)"
             } else {
@@ -51,7 +75,8 @@ class ViewController: UIViewController {
             
         } else {
             // Make displayValue into an optional, then set it to nil below... How do we do this???
-            displayValue = 0
+//            displayValue = 0
+            displayValue = nil
         }
     }
     
@@ -62,23 +87,23 @@ class ViewController: UIViewController {
         
         if let operation = sender.currentTitle {
             if needCommaSeperator {
-                history.text! += ", " + operation
+                history.text! += ", " + operation + ", ="
             } else {
-                history.text! += operation
+                history.text! += operation + ", ="
                 needCommaSeperator = true
             }
             
             if let result = brain.performOperation(operation) {
                 displayValue = result
             } else {
-                displayValue = 0
+                displayValue = nil
             }
         }
     }
     
     @IBAction func clear() {
         brain.clear()
-        displayValue = 0
+        displayValue = nil
         history.text = "Hist: "
         needCommaSeperator = false
     }

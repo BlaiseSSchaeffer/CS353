@@ -14,6 +14,7 @@ class CalculatorBrain {
         case UnaryOperation(String, Double -> Double)
         case BinaryOperation(String, (Double, Double) -> Double)
         case ConstantOperation(String, Double)
+//        case Variable(String)
         
         var description: String {
             get {
@@ -26,6 +27,8 @@ class CalculatorBrain {
                     return symbol
                 case .ConstantOperation(let constant, _):
                     return constant
+//                case .Variable(let variable):
+//                    return "\(variable)"
                 }
             }
         }
@@ -33,6 +36,7 @@ class CalculatorBrain {
     
     private var opStack = [Op]()
     private var knownOps = [String:Op]()
+//    private var variableValues = [String:Double]()
     
     init() {
         func learnOp(op: Op) {
@@ -46,6 +50,8 @@ class CalculatorBrain {
         learnOp(Op.UnaryOperation("√", sqrt))
         learnOp(Op.UnaryOperation("sin", sin))
         learnOp(Op.UnaryOperation("cos", cos))
+        learnOp(Op.UnaryOperation("%", { (num) -> Double in return num / 100 }))
+        learnOp(Op.UnaryOperation("ᐩ/-", { (num) -> Double in return num * -1 }))
         learnOp(Op.ConstantOperation("π", M_PI))
 //        knownOps["×"] = Op.BinaryOperation("×", *)
 //        knownOps["÷"] = Op.BinaryOperation("÷") { $1 / $0 }
@@ -58,6 +64,11 @@ class CalculatorBrain {
         opStack.append(Op.Operand(operand))
         return evaluate()
     }
+    
+//    func pushOperand(symbol: String) -> Double? {
+//        opStack.append(Op.Variable(symbol))
+//        return evaluate()
+//    }
     
     func performOperation(symbol: String) -> Double? {
         if let operation = knownOps[symbol] {
@@ -89,14 +100,16 @@ class CalculatorBrain {
                 }
             case .ConstantOperation(_, let constant):
                 return (constant, remainingOps)
+//            case .Variable(let variable):
+//                return (variableValues[variable], remainingOps)
             }
         }
         return (nil, ops)
     }
     
     func evaluate() -> Double? {
-        let (result, remainder) = evaluate(opStack)
-        print("\(opStack) = \(result) with \(remainder) left over.")
+        let (result, _) = evaluate(opStack)
+//        print("\(opStack) = \(result) with \(remainder) left over.")
         return result
     }
     
