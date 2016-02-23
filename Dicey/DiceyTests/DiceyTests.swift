@@ -9,6 +9,9 @@
 import XCTest
 @testable import Dicey
 
+var cup = Cup(withNumDice: 5)
+
+
 class DiceyTests: XCTestCase {
     
     override func setUp() {
@@ -24,6 +27,16 @@ class DiceyTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        var dice = [Int]()
+        for die in cup.myDice {
+            dice.append(die.getFaceValue())
+        }
+        XCTAssertEqual(dice, [2,5,1,4,2])
+        
+    }
+    
+    func testExample2() {
+        XCTAssertEqual(cup.roll(), [3,2,3,2,6])
     }
     
     func testPerformanceExample() {

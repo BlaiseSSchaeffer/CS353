@@ -36,7 +36,7 @@ class CalculatorBrain {
     
     private var opStack = [Op]()
     private var knownOps = [String:Op]()
-//    private var variableValues = [String:Double]()
+    private var variableValues = [String:Double]()
     
     init() {
         func learnOp(op: Op) {

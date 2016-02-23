@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,12 +17,110 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="siv-vT-JFC">
+                                <rect key="frame" x="20" y="427" width="560" height="65"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                <state key="normal" title="Roll">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="roll" destination="BYZ-38-t0r" eventType="touchUpInside" id="fgD-d6-X5p"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QCL-5r-rul">
+                                <rect key="frame" x="28" y="500" width="103" height="80"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <state key="normal" title="⚀">
+                                    <color key="titleColor" red="1" green="0.80912275285341106" blue="0.3952885471223283" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="freeze:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rlj-aU-xMM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGQ-Gq-sEm">
+                                <rect key="frame" x="139" y="500" width="102" height="80"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <state key="normal" title="⚀">
+                                    <color key="titleColor" red="1" green="0.80912275285341106" blue="0.3952885471223283" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="freeze:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2zU-eV-O3v"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" restorationIdentifier="2" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rM1-qN-p4R">
+                                <rect key="frame" x="249" y="500" width="102" height="80"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <state key="normal" title="⚀">
+                                    <color key="titleColor" red="1" green="0.80912275285341106" blue="0.3952885471223283" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="freeze:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Ch-6o-sh8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" restorationIdentifier="4" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXw-s6-m3l">
+                                <rect key="frame" x="470" y="500" width="102" height="80"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <state key="normal" title="⚀">
+                                    <color key="titleColor" red="1" green="0.80912275285341106" blue="0.3952885471223283" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="freeze:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tAy-Ue-Nra"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmY-4E-knq">
+                                <rect key="frame" x="359" y="500" width="103" height="80"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <state key="normal" title="⚀">
+                                    <color key="titleColor" red="1" green="0.80912275285341106" blue="0.3952885471223283" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="freeze:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yrn-ff-BBA"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yGQ-Gq-sEm" firstAttribute="leading" secondItem="QCL-5r-rul" secondAttribute="trailing" constant="8" id="0KY-mX-TPf"/>
+                            <constraint firstItem="qmY-4E-knq" firstAttribute="width" secondItem="QCL-5r-rul" secondAttribute="width" id="5mm-ZQ-ymm"/>
+                            <constraint firstItem="yGQ-Gq-sEm" firstAttribute="top" secondItem="siv-vT-JFC" secondAttribute="bottom" constant="8" id="7C7-9v-QHT"/>
+                            <constraint firstItem="yGQ-Gq-sEm" firstAttribute="width" secondItem="QCL-5r-rul" secondAttribute="width" id="7Pd-pE-mfN"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rM1-qN-p4R" secondAttribute="bottom" constant="20" id="Ace-TQ-Npa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fXw-s6-m3l" secondAttribute="trailing" constant="8" id="GUi-M1-GFQ"/>
+                            <constraint firstItem="yGQ-Gq-sEm" firstAttribute="height" secondItem="QCL-5r-rul" secondAttribute="height" id="JrJ-mb-tD0"/>
+                            <constraint firstItem="rM1-qN-p4R" firstAttribute="width" secondItem="QCL-5r-rul" secondAttribute="width" id="Kqu-Be-Bo1"/>
+                            <constraint firstItem="rM1-qN-p4R" firstAttribute="height" secondItem="QCL-5r-rul" secondAttribute="height" id="L4R-9d-zPw"/>
+                            <constraint firstItem="qmY-4E-knq" firstAttribute="leading" secondItem="rM1-qN-p4R" secondAttribute="trailing" constant="8" id="NbD-hv-tFc"/>
+                            <constraint firstItem="fXw-s6-m3l" firstAttribute="leading" secondItem="qmY-4E-knq" secondAttribute="trailing" constant="8" id="QXb-zk-XFk"/>
+                            <constraint firstItem="QCL-5r-rul" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="UZZ-at-848"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fXw-s6-m3l" secondAttribute="bottom" constant="20" id="WGB-W8-wY9"/>
+                            <constraint firstItem="qmY-4E-knq" firstAttribute="top" secondItem="siv-vT-JFC" secondAttribute="bottom" constant="8" id="XTp-Fi-QzU"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="siv-vT-JFC" secondAttribute="leading" id="XmA-nS-5Ia"/>
+                            <constraint firstItem="QCL-5r-rul" firstAttribute="top" secondItem="siv-vT-JFC" secondAttribute="bottom" constant="8" id="Zwq-2e-zjZ"/>
+                            <constraint firstItem="fXw-s6-m3l" firstAttribute="height" secondItem="QCL-5r-rul" secondAttribute="height" id="bQ9-7A-ILN"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="siv-vT-JFC" secondAttribute="bottom" constant="108" id="ciK-Wr-BLa"/>
+                            <constraint firstItem="rM1-qN-p4R" firstAttribute="leading" secondItem="yGQ-Gq-sEm" secondAttribute="trailing" constant="8" id="hDd-Wn-fnb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="siv-vT-JFC" secondAttribute="trailing" id="kfG-3v-hCw"/>
+                            <constraint firstItem="fXw-s6-m3l" firstAttribute="width" secondItem="QCL-5r-rul" secondAttribute="width" id="lqJ-Bx-SAP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yGQ-Gq-sEm" secondAttribute="bottom" constant="20" id="oeF-uN-bnf"/>
+                            <constraint firstItem="rM1-qN-p4R" firstAttribute="top" secondItem="siv-vT-JFC" secondAttribute="bottom" constant="8" id="pYB-PZ-du0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qmY-4E-knq" secondAttribute="bottom" constant="20" id="s5P-H8-XTy"/>
+                            <constraint firstItem="fXw-s6-m3l" firstAttribute="top" secondItem="siv-vT-JFC" secondAttribute="bottom" constant="8" id="wI2-Rf-vKi"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QCL-5r-rul" secondAttribute="bottom" constant="20" id="wYZ-hJ-aoC"/>
+                            <constraint firstItem="qmY-4E-knq" firstAttribute="height" secondItem="QCL-5r-rul" secondAttribute="height" id="xLW-KL-QAf"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outletCollection property="dice" destination="QCL-5r-rul" collectionClass="NSMutableArray" id="E9S-Dr-eBQ"/>
+                        <outletCollection property="dice" destination="yGQ-Gq-sEm" collectionClass="NSMutableArray" id="H0f-Yp-c5N"/>
+                        <outletCollection property="dice" destination="rM1-qN-p4R" collectionClass="NSMutableArray" id="2U0-N2-jOD"/>
+                        <outletCollection property="dice" destination="qmY-4E-knq" collectionClass="NSMutableArray" id="eLD-jD-tga"/>
+                        <outletCollection property="dice" destination="fXw-s6-m3l" collectionClass="NSMutableArray" id="KfZ-N9-lF6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="475" y="409"/>
+            <point key="canvasLocation" x="647" y="315"/>
         </scene>
     </scenes>
 </document>
