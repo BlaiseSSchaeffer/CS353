@@ -68,8 +68,10 @@ class ViewController: UIViewController {
         
             if needCommaSeperator {
                 history.text! += ", \(result)"
+                print(brain.description)
             } else {
                 history.text! += "\(result)"
+                print(brain.description)
                 needCommaSeperator = true
             }
             
@@ -88,8 +90,10 @@ class ViewController: UIViewController {
         if let operation = sender.currentTitle {
             if needCommaSeperator {
                 history.text! += ", " + operation + ", ="
+                print(brain.description)
             } else {
                 history.text! += operation + ", ="
+                print(brain.description)
                 needCommaSeperator = true
             }
             
@@ -105,6 +109,7 @@ class ViewController: UIViewController {
         brain.clear()
         displayValue = nil
         history.text = "Hist: "
+        print(brain.description)
         needCommaSeperator = false
     }
 }
