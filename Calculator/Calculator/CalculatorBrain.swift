@@ -116,6 +116,7 @@ class CalculatorBrain {
         learnOp(Op.UnaryOperation("ᐩ/-", { (num) -> Double in return num * -1 }))
         learnOp(Op.UnaryOperation("1/x", { (num) -> Double in return 1 / num }))
         learnOp(Op.UnaryOperation(("10^x"), { (num) -> Double in return pow(10, num) }))
+        learnOp(Op.UnaryOperation(("x^2"), { (num) -> Double in return pow(num, 2) }))
         learnOp(Op.ConstantOperation("π", M_PI))
         learnOp(Op.ConstantOperation("e", M_E))
     }
