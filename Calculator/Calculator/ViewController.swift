@@ -13,13 +13,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var display: UILabel!
     @IBOutlet weak var history: UILabel!
     
+    
     var userIsInTheMiddleOfTypingANumber = false
-    var needCommaSeperator = false
     var brain = CalculatorBrain()
+    
     
     var displayValue: Double? {
         get {
-//            return NSNumberFormatter().numberFromString(display.text!)!.doubleValue
             if let val =  display.text {
                 return NSNumberFormatter().numberFromString(val)!.doubleValue
             } else {
@@ -35,6 +35,7 @@ class ViewController: UIViewController {
             userIsInTheMiddleOfTypingANumber = false
         }
     }
+    
     
     @IBAction func appendDigit(sender: UIButton) {
         let digit = sender.currentTitle!
@@ -63,24 +64,15 @@ class ViewController: UIViewController {
     
     @IBAction func enter() {
         userIsInTheMiddleOfTypingANumber = false
-        if let result = brain.pushOperand(displayValue!) {
-            displayValue = result
-        
-            if needCommaSeperator {
-                history.text! += ", \(result)"
-                print(brain.description)
-            } else {
-                history.text! += "\(result)"
-                print(brain.description)
-                needCommaSeperator = true
-            }
-            
-        } else {
-            // Make displayValue into an optional, then set it to nil below... How do we do this???
-//            displayValue = 0
-            displayValue = nil
-        }
+//        if let result = brain.pushOperand(displayValue!) {
+//            displayValue = result
+//        } else {
+//            displayValue = nil
+//        }
+        displayValue = brain.pushOperand(displayValue!)
+        history.text = brain.description
     }
+    
     
     @IBAction func operate(sender: UIButton) {
         if userIsInTheMiddleOfTypingANumber {
@@ -88,29 +80,37 @@ class ViewController: UIViewController {
         }
         
         if let operation = sender.currentTitle {
-            if needCommaSeperator {
-                history.text! += ", " + operation + ", ="
-                print(brain.description)
-            } else {
-                history.text! += operation + ", ="
-                print(brain.description)
-                needCommaSeperator = true
-            }
-            
-            if let result = brain.performOperation(operation) {
-                displayValue = result
-            } else {
-                displayValue = nil
-            }
+//            if let result = brain.performOperation(operation) {
+//                displayValue = result
+//            } else {
+//                displayValue = nil
+//            }
+            displayValue = brain.performOperation(operation)
+            history.text = brain.description
         }
     }
     
+    
     @IBAction func clear() {
         brain.clear()
+        brain.variableValues = [String:Double]()
         displayValue = nil
-        history.text = "Hist: "
-        print(brain.description)
-        needCommaSeperator = false
+        history.text = "History"
     }
+    
+    
+    @IBAction func saveToMemory() {
+        if let num = displayValue {
+            brain.variableValues["M"] = num
+            userIsInTheMiddleOfTypingANumber = false
+            displayValue = brain.evaluate()
+        }
+    }
+    
+    
+    @IBAction func retrieveFromMemory() {
+        brain.pushOperand("M")
+    }
+    
 }
 

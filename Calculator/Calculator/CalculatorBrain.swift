@@ -11,10 +11,47 @@ import Foundation
 class CalculatorBrain {
     var description: String {
         get {
-            
-            return "Here is the opStack: \(opStack)"
+            let d = postfixToInfix(opStack)
+            var desc = d.desc
+            for op in d.remainingOps {
+                desc += ", \(op)"
+            }
+            return desc + " ="
         }
     }
+    
+    
+    private func postfixToInfix(ops: [Op]) -> (desc: String, remainingOps: [Op]) {
+        if !ops.isEmpty {
+            var remaimingOps = ops
+            let op = remaimingOps.removeLast()
+            
+            switch op {
+            case.Operand(let operand):
+                return ("\(operand)", remaimingOps)
+                
+            case.UnaryOperation(let operation, _):
+                let postfixToInFixEvaluation = postfixToInfix(remaimingOps)
+                let operand = postfixToInFixEvaluation.desc
+                return("\(operation)(\(operand))", postfixToInFixEvaluation.remainingOps)
+                
+            case.BinaryOperation(let operation, _):
+                let pti1 = postfixToInfix(remaimingOps)
+                let operand1 = pti1.desc
+                let pti2 = postfixToInfix(pti1.remainingOps)
+                let operand2 = pti2.desc
+                return ("(\(operand2) \(operation) \(operand1))", pti2.remainingOps)
+    
+            case.ConstantOperation(let constant, _):
+                return ("\(constant)", remaimingOps)
+                
+            case .Variable(let variable):
+                return (variable, remaimingOps)
+            }
+        }
+        return ("?", ops)
+    }
+    
     
     private enum Op: CustomStringConvertible {
         case Operand(Double)
@@ -39,11 +76,29 @@ class CalculatorBrain {
                 }
             }
         }
+        
+        var precedence: Int {
+            get {
+                switch self {
+                case .BinaryOperation(let symbol, _):
+                    if symbol == "×" || symbol == "÷" {
+                        return Int.max - 1
+                    } else {
+                        return Int.max - 2
+                    }
+                    
+                default:
+                    return Int.max
+                }
+            }
+        }
     }
+    
     
     private var opStack = [Op]()
     private var knownOps = [String:Op]()
-    private var variableValues = [String:Double]()
+    var variableValues = [String:Double]()
+    
     
     init() {
         func learnOp(op: Op) {
@@ -59,18 +114,24 @@ class CalculatorBrain {
         learnOp(Op.UnaryOperation("cos", cos))
         learnOp(Op.UnaryOperation("%", { (num) -> Double in return num / 100 }))
         learnOp(Op.UnaryOperation("ᐩ/-", { (num) -> Double in return num * -1 }))
+        learnOp(Op.UnaryOperation("1/x", { (num) -> Double in return 1 / num }))
+        learnOp(Op.UnaryOperation(("10^x"), { (num) -> Double in return pow(10, num) }))
         learnOp(Op.ConstantOperation("π", M_PI))
+        learnOp(Op.ConstantOperation("e", M_E))
     }
+    
     
     func pushOperand(operand: Double) -> Double? {
         opStack.append(Op.Operand(operand))
         return evaluate()
     }
     
+    
     func pushOperand(symbol: String) -> Double? {
         opStack.append(Op.Variable(symbol))
         return evaluate()
     }
+    
     
     func performOperation(symbol: String) -> Double? {
         if let operation = knownOps[symbol] {
@@ -78,6 +139,7 @@ class CalculatorBrain {
         }
         return evaluate()
     }
+    
     
     typealias PropertyList = AnyObject
     var program: PropertyList { // Guaranteed to be a PropetryList
@@ -98,6 +160,7 @@ class CalculatorBrain {
             }
         }
     }
+    
     
     private func evaluate(ops: [Op]) -> (result: Double?, remainingOps: [Op]) {
         if !ops.isEmpty {
@@ -137,11 +200,13 @@ class CalculatorBrain {
         return (nil, ops)
     }
     
+    
     func evaluate() -> Double? {
         let (result, remainder) = evaluate(opStack)
         print("\(opStack) = \(result) with \(remainder) left over.")
         return result
     }
+    
     
     func clear() {
         opStack.removeAll()
