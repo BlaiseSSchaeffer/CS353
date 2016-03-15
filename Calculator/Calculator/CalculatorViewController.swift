@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CalculatorViewController.swift
 //  Calculator
 //
 //  Created by Blaise Schaeffer on 2/4/16.

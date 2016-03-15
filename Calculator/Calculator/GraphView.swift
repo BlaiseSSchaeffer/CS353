@@ -14,13 +14,8 @@ class GraphView: UIView {
     var axes = AxesDrawer()
     
     @IBInspectable
-    var origin: CGPoint {
-        return convertPoint(center, fromCoordinateSpace: superview!)
-    }
+    var pointsPerUnit: CGFloat = 20 { didSet { setNeedsDisplay() } }
     
-    @IBInspectable
-    var pointsPerUnit: CGFloat = 10 { didSet { setNeedsDisplay() } }
-        
     
     func scale(gesture: UIPinchGestureRecognizer) {
         if gesture.state == .Changed {
@@ -28,21 +23,60 @@ class GraphView: UIView {
             gesture.scale = 1
         }
     }
+
     
-//    func pan(gesture: UIPanGestureRecognizer) {
-//        switch gesture.state {
-//        case .Ended: fallthrough
-//        case .Changed:
-//            let translation = gesture.translationInView(self)
-//            let panChange = -Int(translation.y / 4)
-//            if panChange != 0 {
-//                gesture.setTranslation(origin, inView: self)
-//            }
-//        default: break
-//        }
-//    }
+    @IBInspectable
+    var centerOfViewTranslation: CGPoint = CGPoint(x: 0.0, y: 0.0) { didSet { setNeedsDisplay() } }
+    
+    @IBInspectable
+    var centerOfView: CGPoint {
+        return CGPoint(x: convertPoint(center, fromCoordinateSpace: superview!).x + centerOfViewTranslation.x, y: centerOfViewTranslation.y + convertPoint(center, fromCoordinateSpace: superview!).y)
+    }
+    
+    func pan(gesture: UIPanGestureRecognizer) {
+        switch gesture.state {
+        case .Ended: fallthrough
+        case .Changed:
+            let translation = gesture.translationInView(self)
+            centerOfViewTranslation.x += translation.x
+            centerOfViewTranslation.y += translation.y
+            gesture.setTranslation(CGPointZero, inView: self)
+        default: break
+        }
+    }
+    
+    func recenter(gesture: UITapGestureRecognizer) {
+        gesture.numberOfTapsRequired = 2
+        if gesture.state == .Ended {
+            centerOfViewTranslation = CGPoint(x: 0.0, y: 0.0)
+        }
+    }
     
     override func drawRect(rect: CGRect) {
-        axes.drawAxesInRect(rect, origin: origin, pointsPerUnit: pointsPerUnit)
+        axes.drawAxesInRect(rect, origin: centerOfView, pointsPerUnit: pointsPerUnit)
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
