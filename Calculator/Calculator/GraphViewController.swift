@@ -8,22 +8,38 @@
 
 import UIKit
 
-class GraphViewController: UIViewController {
+class GraphViewController: UIViewController, GraphViewDataSource {
+    
+    var brain = CalculatorBrain()
+    var equation: String = "Graph" {
+        didSet { updateUI() }
+    }
+    
 
     @IBOutlet weak var graphView: GraphView! {
         didSet {
+            graphView.dataSource = self
             graphView.addGestureRecognizer(UIPinchGestureRecognizer(target: graphView, action: "scale:"))
             graphView.addGestureRecognizer(UIPanGestureRecognizer(target: graphView, action: "pan:"))
             graphView.addGestureRecognizer(UITapGestureRecognizer(target: graphView, action: "recenter:"))
         }
     }
     
+    
     private func updateUI() {
         graphView?.setNeedsDisplay()
+        title = equation
+        
     }
+    
     
     override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
         updateUI()
+    }
+
+    
+    func retrieveCalculatorBrain(sender: GraphView) -> CalculatorBrain {
+        return brain
     }
     
 }

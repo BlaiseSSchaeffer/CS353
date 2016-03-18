@@ -8,6 +8,11 @@
 
 import UIKit
 
+//protocol CalculatorViewDataSource: class {
+//    func equationForCalculatorView(sender: CalculatorViewController) -> String?
+//}
+
+
 class CalculatorViewController: UIViewController {
     
     @IBOutlet weak var display: UILabel!
@@ -16,7 +21,6 @@ class CalculatorViewController: UIViewController {
     
     var userIsInTheMiddleOfTypingANumber = false
     var brain = CalculatorBrain()
-    
     
     var displayValue: Double? {
         get {
@@ -64,11 +68,6 @@ class CalculatorViewController: UIViewController {
     
     @IBAction func enter() {
         userIsInTheMiddleOfTypingANumber = false
-//        if let result = brain.pushOperand(displayValue!) {
-//            displayValue = result
-//        } else {
-//            displayValue = nil
-//        }
         displayValue = brain.pushOperand(displayValue!)
         history.text = brain.description
     }
@@ -80,11 +79,6 @@ class CalculatorViewController: UIViewController {
         }
         
         if let operation = sender.currentTitle {
-//            if let result = brain.performOperation(operation) {
-//                displayValue = result
-//            } else {
-//                displayValue = nil
-//            }
             displayValue = brain.performOperation(operation)
             history.text = brain.description
         }
@@ -112,5 +106,40 @@ class CalculatorViewController: UIViewController {
         brain.pushOperand("M")
     }
     
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if userIsInTheMiddleOfTypingANumber {
+            enter()
+        }
+        var destination = segue.destinationViewController as  UIViewController
+        
+        if let navCon = destination as? UINavigationController {
+            
+            destination = navCon.visibleViewController!
+        }
+        if let gvc = destination as? GraphViewController {
+            if let identifier = segue.identifier {
+                let hist = history.text!.componentsSeparatedByString(", ")
+                var equation = hist.last
+                if equation == "History" {
+                    equation = "Graph"
+                }
+            
+                switch identifier {
+                    case "graph":
+                    gvc.equation = equation!
+                    gvc.brain = brain
+                    
+                default:
+                    gvc.equation = equation!
+                    gvc.brain = brain
+                }
+            }
+        }
+    }
+    
 }
+
+
+
 
