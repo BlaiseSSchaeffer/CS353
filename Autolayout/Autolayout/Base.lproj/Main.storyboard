@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -132,13 +132,13 @@
                             <mask key="constraints">
                                 <exclude reference="6ah-6B-ZFt"/>
                                 <exclude reference="Lgq-PE-QJx"/>
+                                <exclude reference="gu4-aq-gvz"/>
                                 <exclude reference="AIz-Gj-9YT"/>
                                 <exclude reference="tl1-5f-DMo"/>
                                 <exclude reference="yb2-hB-IBb"/>
                                 <exclude reference="N7q-94-zvD"/>
                                 <exclude reference="Uxa-Hq-FPB"/>
                                 <exclude reference="clB-5a-87r"/>
-                                <exclude reference="gu4-aq-gvz"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -147,6 +147,8 @@
                                 <exclude reference="AZ1-0Y-gAD"/>
                                 <include reference="Lgq-PE-QJx"/>
                                 <exclude reference="TOH-Ed-DEd"/>
+                                <exclude reference="fKm-7P-xef"/>
+                                <include reference="gu4-aq-gvz"/>
                                 <exclude reference="0vN-Uj-EyF"/>
                                 <include reference="AIz-Gj-9YT"/>
                                 <exclude reference="hdA-TG-xw1"/>
@@ -159,8 +161,6 @@
                                 <include reference="clB-5a-87r"/>
                                 <exclude reference="rUV-oC-8Tw"/>
                                 <exclude reference="uyu-OA-6lL"/>
-                                <exclude reference="fKm-7P-xef"/>
-                                <include reference="gu4-aq-gvz"/>
                             </mask>
                         </variation>
                     </view>
