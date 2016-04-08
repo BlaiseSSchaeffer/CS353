@@ -10,7 +10,7 @@ import UIKit
 
 class TweetTableViewController: UITableViewController, UITextFieldDelegate {
     var tweets = [[Tweet]]()
-    var searchText: String? = "#vegan" {
+    var searchText: String? = "#luthercollege" {
         didSet {
             lastSuccessfulRequest = nil
             searchTextField?.text = searchText
@@ -61,10 +61,11 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
                 request.fetchTweets { (newTweets) -> Void in
                     dispatch_async(dispatch_get_main_queue()) {
                         if newTweets.count > 0 {
+                            self.lastSuccessfulRequest = request
                             self.tweets.insert(newTweets, atIndex: 0)
                             self.tableView.reloadData()
-                            sender?.endRefreshing()
                         }
+                        sender?.endRefreshing()
                     }
                 }
             }
@@ -156,5 +157,10 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let dvc = segue.destinationViewController;
+        print(dvc);
+    }
 
 }

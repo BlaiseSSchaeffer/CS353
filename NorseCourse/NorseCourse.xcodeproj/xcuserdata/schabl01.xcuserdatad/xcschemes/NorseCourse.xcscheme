@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0720"
+   LastUpgradeVersion = "0730"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "16068BD21C9126FA00685B2F"
+               BlueprintIdentifier = "165517EA1CAE151000CAAEE3"
                BuildableName = "NorseCourse.app"
                BlueprintName = "NorseCourse"
                ReferencedContainer = "container:NorseCourse.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "16068BE61C9126FA00685B2F"
+               BlueprintIdentifier = "165517FE1CAE151000CAAEE3"
                BuildableName = "NorseCourseTests.xctest"
                BlueprintName = "NorseCourseTests"
                ReferencedContainer = "container:NorseCourse.xcodeproj">
@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "16068BF11C9126FA00685B2F"
+               BlueprintIdentifier = "165518091CAE151000CAAEE3"
                BuildableName = "NorseCourseUITests.xctest"
                BlueprintName = "NorseCourseUITests"
                ReferencedContainer = "container:NorseCourse.xcodeproj">
@@ -52,7 +52,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "16068BD21C9126FA00685B2F"
+            BlueprintIdentifier = "165517EA1CAE151000CAAEE3"
             BuildableName = "NorseCourse.app"
             BlueprintName = "NorseCourse"
             ReferencedContainer = "container:NorseCourse.xcodeproj">
@@ -75,7 +75,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "16068BD21C9126FA00685B2F"
+            BlueprintIdentifier = "165517EA1CAE151000CAAEE3"
             BuildableName = "NorseCourse.app"
             BlueprintName = "NorseCourse"
             ReferencedContainer = "container:NorseCourse.xcodeproj">
@@ -94,7 +94,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "16068BD21C9126FA00685B2F"
+            BlueprintIdentifier = "165517EA1CAE151000CAAEE3"
             BuildableName = "NorseCourse.app"
             BlueprintName = "NorseCourse"
             ReferencedContainer = "container:NorseCourse.xcodeproj">

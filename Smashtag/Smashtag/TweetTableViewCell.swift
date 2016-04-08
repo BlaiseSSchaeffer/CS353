@@ -32,6 +32,25 @@ class TweetTableViewCell: UITableViewCell {
         if let tweet = self.tweet {
             tweetTextLabel?.text = tweet.text
             if tweetTextLabel?.text != nil {
+                let attributedText = tweetTextLabel.attributedText as? NSMutableAttributedString
+                
+                let users = tweet.userMentions
+                let hashtags = tweet.hashtags
+                let urls = tweet.urls
+                
+                for user in users {
+                    attributedText?.addAttributes([NSForegroundColorAttributeName : UIColor.blueColor()], range: user.nsrange)
+                }
+                
+                for hashtag in hashtags {
+                    attributedText?.addAttributes([NSForegroundColorAttributeName : UIColor.darkGrayColor()], range: hashtag.nsrange)
+                }
+                
+                for url in urls {
+                    attributedText?.addAttributes([NSForegroundColorAttributeName : UIColor.lightGrayColor()], range: url.nsrange)
+                }
+                tweetTextLabel.attributedText = attributedText
+                
                 for _ in tweet.media {
                     tweetTextLabel.text! += " 📷"
                 }
@@ -54,4 +73,6 @@ class TweetTableViewCell: UITableViewCell {
             tweetCreatedLabel?.text = formatter.stringFromDate(tweet.created)
         }
     }
+    
+    
 }

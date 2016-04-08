@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  NorseCourse
 //
-//  Created by Blaise Schaeffer on 3/9/16.
+//  Created by Blaise Schaeffer on 3/31/16.
 //  Copyright © 2016 Blaise2s. All rights reserved.
 //
 

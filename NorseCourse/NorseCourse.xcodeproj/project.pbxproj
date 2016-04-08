@@ -7,64 +7,64 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16068BD71C9126FA00685B2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16068BD61C9126FA00685B2F /* AppDelegate.swift */; };
-		16068BD91C9126FA00685B2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16068BD81C9126FA00685B2F /* ViewController.swift */; };
-		16068BDC1C9126FA00685B2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16068BDA1C9126FA00685B2F /* Main.storyboard */; };
-		16068BDE1C9126FA00685B2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16068BDD1C9126FA00685B2F /* Assets.xcassets */; };
-		16068BE11C9126FA00685B2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16068BDF1C9126FA00685B2F /* LaunchScreen.storyboard */; };
-		16068BEC1C9126FA00685B2F /* NorseCourseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16068BEB1C9126FA00685B2F /* NorseCourseTests.swift */; };
-		16068BF71C9126FA00685B2F /* NorseCourseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16068BF61C9126FA00685B2F /* NorseCourseUITests.swift */; };
+		165517EF1CAE151000CAAEE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165517EE1CAE151000CAAEE3 /* AppDelegate.swift */; };
+		165517F11CAE151000CAAEE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165517F01CAE151000CAAEE3 /* ViewController.swift */; };
+		165517F41CAE151000CAAEE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165517F21CAE151000CAAEE3 /* Main.storyboard */; };
+		165517F61CAE151000CAAEE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 165517F51CAE151000CAAEE3 /* Assets.xcassets */; };
+		165517F91CAE151000CAAEE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165517F71CAE151000CAAEE3 /* LaunchScreen.storyboard */; };
+		165518041CAE151000CAAEE3 /* NorseCourseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165518031CAE151000CAAEE3 /* NorseCourseTests.swift */; };
+		1655180F1CAE151000CAAEE3 /* NorseCourseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1655180E1CAE151000CAAEE3 /* NorseCourseUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		16068BE81C9126FA00685B2F /* PBXContainerItemProxy */ = {
+		165518001CAE151000CAAEE3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 16068BCB1C9126F900685B2F /* Project object */;
+			containerPortal = 165517E31CAE151000CAAEE3 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 16068BD21C9126FA00685B2F;
+			remoteGlobalIDString = 165517EA1CAE151000CAAEE3;
 			remoteInfo = NorseCourse;
 		};
-		16068BF31C9126FA00685B2F /* PBXContainerItemProxy */ = {
+		1655180B1CAE151000CAAEE3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 16068BCB1C9126F900685B2F /* Project object */;
+			containerPortal = 165517E31CAE151000CAAEE3 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 16068BD21C9126FA00685B2F;
+			remoteGlobalIDString = 165517EA1CAE151000CAAEE3;
 			remoteInfo = NorseCourse;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		16068BD31C9126FA00685B2F /* NorseCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NorseCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		16068BD61C9126FA00685B2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		16068BD81C9126FA00685B2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		16068BDB1C9126FA00685B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		16068BDD1C9126FA00685B2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		16068BE01C9126FA00685B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		16068BE21C9126FA00685B2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		16068BE71C9126FA00685B2F /* NorseCourseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NorseCourseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		16068BEB1C9126FA00685B2F /* NorseCourseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NorseCourseTests.swift; sourceTree = "<group>"; };
-		16068BED1C9126FA00685B2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		16068BF21C9126FA00685B2F /* NorseCourseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NorseCourseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		16068BF61C9126FA00685B2F /* NorseCourseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NorseCourseUITests.swift; sourceTree = "<group>"; };
-		16068BF81C9126FA00685B2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		165517EB1CAE151000CAAEE3 /* NorseCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NorseCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		165517EE1CAE151000CAAEE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		165517F01CAE151000CAAEE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		165517F31CAE151000CAAEE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		165517F51CAE151000CAAEE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		165517F81CAE151000CAAEE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		165517FA1CAE151000CAAEE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		165517FF1CAE151000CAAEE3 /* NorseCourseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NorseCourseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		165518031CAE151000CAAEE3 /* NorseCourseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NorseCourseTests.swift; sourceTree = "<group>"; };
+		165518051CAE151000CAAEE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1655180A1CAE151000CAAEE3 /* NorseCourseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NorseCourseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1655180E1CAE151000CAAEE3 /* NorseCourseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NorseCourseUITests.swift; sourceTree = "<group>"; };
+		165518101CAE151000CAAEE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		16068BD01C9126FA00685B2F /* Frameworks */ = {
+		165517E81CAE151000CAAEE3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		16068BE41C9126FA00685B2F /* Frameworks */ = {
+		165517FC1CAE151000CAAEE3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		16068BEF1C9126FA00685B2F /* Frameworks */ = {
+		165518071CAE151000CAAEE3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -74,53 +74,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		16068BCA1C9126F900685B2F = {
+		165517E21CAE151000CAAEE3 = {
 			isa = PBXGroup;
 			children = (
-				16068BD51C9126FA00685B2F /* NorseCourse */,
-				16068BEA1C9126FA00685B2F /* NorseCourseTests */,
-				16068BF51C9126FA00685B2F /* NorseCourseUITests */,
-				16068BD41C9126FA00685B2F /* Products */,
+				165517ED1CAE151000CAAEE3 /* NorseCourse */,
+				165518021CAE151000CAAEE3 /* NorseCourseTests */,
+				1655180D1CAE151000CAAEE3 /* NorseCourseUITests */,
+				165517EC1CAE151000CAAEE3 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		16068BD41C9126FA00685B2F /* Products */ = {
+		165517EC1CAE151000CAAEE3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				16068BD31C9126FA00685B2F /* NorseCourse.app */,
-				16068BE71C9126FA00685B2F /* NorseCourseTests.xctest */,
-				16068BF21C9126FA00685B2F /* NorseCourseUITests.xctest */,
+				165517EB1CAE151000CAAEE3 /* NorseCourse.app */,
+				165517FF1CAE151000CAAEE3 /* NorseCourseTests.xctest */,
+				1655180A1CAE151000CAAEE3 /* NorseCourseUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		16068BD51C9126FA00685B2F /* NorseCourse */ = {
+		165517ED1CAE151000CAAEE3 /* NorseCourse */ = {
 			isa = PBXGroup;
 			children = (
-				16068BD61C9126FA00685B2F /* AppDelegate.swift */,
-				16068BD81C9126FA00685B2F /* ViewController.swift */,
-				16068BDA1C9126FA00685B2F /* Main.storyboard */,
-				16068BDD1C9126FA00685B2F /* Assets.xcassets */,
-				16068BDF1C9126FA00685B2F /* LaunchScreen.storyboard */,
-				16068BE21C9126FA00685B2F /* Info.plist */,
+				165517EE1CAE151000CAAEE3 /* AppDelegate.swift */,
+				165517F01CAE151000CAAEE3 /* ViewController.swift */,
+				165517F21CAE151000CAAEE3 /* Main.storyboard */,
+				165517F51CAE151000CAAEE3 /* Assets.xcassets */,
+				165517F71CAE151000CAAEE3 /* LaunchScreen.storyboard */,
+				165517FA1CAE151000CAAEE3 /* Info.plist */,
 			);
 			path = NorseCourse;
 			sourceTree = "<group>";
 		};
-		16068BEA1C9126FA00685B2F /* NorseCourseTests */ = {
+		165518021CAE151000CAAEE3 /* NorseCourseTests */ = {
 			isa = PBXGroup;
 			children = (
-				16068BEB1C9126FA00685B2F /* NorseCourseTests.swift */,
-				16068BED1C9126FA00685B2F /* Info.plist */,
+				165518031CAE151000CAAEE3 /* NorseCourseTests.swift */,
+				165518051CAE151000CAAEE3 /* Info.plist */,
 			);
 			path = NorseCourseTests;
 			sourceTree = "<group>";
 		};
-		16068BF51C9126FA00685B2F /* NorseCourseUITests */ = {
+		1655180D1CAE151000CAAEE3 /* NorseCourseUITests */ = {
 			isa = PBXGroup;
 			children = (
-				16068BF61C9126FA00685B2F /* NorseCourseUITests.swift */,
-				16068BF81C9126FA00685B2F /* Info.plist */,
+				1655180E1CAE151000CAAEE3 /* NorseCourseUITests.swift */,
+				165518101CAE151000CAAEE3 /* Info.plist */,
 			);
 			path = NorseCourseUITests;
 			sourceTree = "<group>";
@@ -128,13 +128,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		16068BD21C9126FA00685B2F /* NorseCourse */ = {
+		165517EA1CAE151000CAAEE3 /* NorseCourse */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 16068BFB1C9126FA00685B2F /* Build configuration list for PBXNativeTarget "NorseCourse" */;
+			buildConfigurationList = 165518131CAE151000CAAEE3 /* Build configuration list for PBXNativeTarget "NorseCourse" */;
 			buildPhases = (
-				16068BCF1C9126FA00685B2F /* Sources */,
-				16068BD01C9126FA00685B2F /* Frameworks */,
-				16068BD11C9126FA00685B2F /* Resources */,
+				165517E71CAE151000CAAEE3 /* Sources */,
+				165517E81CAE151000CAAEE3 /* Frameworks */,
+				165517E91CAE151000CAAEE3 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -142,72 +142,72 @@
 			);
 			name = NorseCourse;
 			productName = NorseCourse;
-			productReference = 16068BD31C9126FA00685B2F /* NorseCourse.app */;
+			productReference = 165517EB1CAE151000CAAEE3 /* NorseCourse.app */;
 			productType = "com.apple.product-type.application";
 		};
-		16068BE61C9126FA00685B2F /* NorseCourseTests */ = {
+		165517FE1CAE151000CAAEE3 /* NorseCourseTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 16068BFE1C9126FA00685B2F /* Build configuration list for PBXNativeTarget "NorseCourseTests" */;
+			buildConfigurationList = 165518161CAE151000CAAEE3 /* Build configuration list for PBXNativeTarget "NorseCourseTests" */;
 			buildPhases = (
-				16068BE31C9126FA00685B2F /* Sources */,
-				16068BE41C9126FA00685B2F /* Frameworks */,
-				16068BE51C9126FA00685B2F /* Resources */,
+				165517FB1CAE151000CAAEE3 /* Sources */,
+				165517FC1CAE151000CAAEE3 /* Frameworks */,
+				165517FD1CAE151000CAAEE3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				16068BE91C9126FA00685B2F /* PBXTargetDependency */,
+				165518011CAE151000CAAEE3 /* PBXTargetDependency */,
 			);
 			name = NorseCourseTests;
 			productName = NorseCourseTests;
-			productReference = 16068BE71C9126FA00685B2F /* NorseCourseTests.xctest */;
+			productReference = 165517FF1CAE151000CAAEE3 /* NorseCourseTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		16068BF11C9126FA00685B2F /* NorseCourseUITests */ = {
+		165518091CAE151000CAAEE3 /* NorseCourseUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 16068C011C9126FA00685B2F /* Build configuration list for PBXNativeTarget "NorseCourseUITests" */;
+			buildConfigurationList = 165518191CAE151000CAAEE3 /* Build configuration list for PBXNativeTarget "NorseCourseUITests" */;
 			buildPhases = (
-				16068BEE1C9126FA00685B2F /* Sources */,
-				16068BEF1C9126FA00685B2F /* Frameworks */,
-				16068BF01C9126FA00685B2F /* Resources */,
+				165518061CAE151000CAAEE3 /* Sources */,
+				165518071CAE151000CAAEE3 /* Frameworks */,
+				165518081CAE151000CAAEE3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				16068BF41C9126FA00685B2F /* PBXTargetDependency */,
+				1655180C1CAE151000CAAEE3 /* PBXTargetDependency */,
 			);
 			name = NorseCourseUITests;
 			productName = NorseCourseUITests;
-			productReference = 16068BF21C9126FA00685B2F /* NorseCourseUITests.xctest */;
+			productReference = 1655180A1CAE151000CAAEE3 /* NorseCourseUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		16068BCB1C9126F900685B2F /* Project object */ = {
+		165517E31CAE151000CAAEE3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Blaise2s;
 				TargetAttributes = {
-					16068BD21C9126FA00685B2F = {
-						CreatedOnToolsVersion = 7.2.1;
+					165517EA1CAE151000CAAEE3 = {
+						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 8XV24NFT5Q;
 					};
-					16068BE61C9126FA00685B2F = {
-						CreatedOnToolsVersion = 7.2.1;
+					165517FE1CAE151000CAAEE3 = {
+						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 8XV24NFT5Q;
-						TestTargetID = 16068BD21C9126FA00685B2F;
+						TestTargetID = 165517EA1CAE151000CAAEE3;
 					};
-					16068BF11C9126FA00685B2F = {
-						CreatedOnToolsVersion = 7.2.1;
+					165518091CAE151000CAAEE3 = {
+						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 8XV24NFT5Q;
-						TestTargetID = 16068BD21C9126FA00685B2F;
+						TestTargetID = 165517EA1CAE151000CAAEE3;
 					};
 				};
 			};
-			buildConfigurationList = 16068BCE1C9126F900685B2F /* Build configuration list for PBXProject "NorseCourse" */;
+			buildConfigurationList = 165517E61CAE151000CAAEE3 /* Build configuration list for PBXProject "NorseCourse" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -215,37 +215,37 @@
 				en,
 				Base,
 			);
-			mainGroup = 16068BCA1C9126F900685B2F;
-			productRefGroup = 16068BD41C9126FA00685B2F /* Products */;
+			mainGroup = 165517E21CAE151000CAAEE3;
+			productRefGroup = 165517EC1CAE151000CAAEE3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				16068BD21C9126FA00685B2F /* NorseCourse */,
-				16068BE61C9126FA00685B2F /* NorseCourseTests */,
-				16068BF11C9126FA00685B2F /* NorseCourseUITests */,
+				165517EA1CAE151000CAAEE3 /* NorseCourse */,
+				165517FE1CAE151000CAAEE3 /* NorseCourseTests */,
+				165518091CAE151000CAAEE3 /* NorseCourseUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		16068BD11C9126FA00685B2F /* Resources */ = {
+		165517E91CAE151000CAAEE3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16068BE11C9126FA00685B2F /* LaunchScreen.storyboard in Resources */,
-				16068BDE1C9126FA00685B2F /* Assets.xcassets in Resources */,
-				16068BDC1C9126FA00685B2F /* Main.storyboard in Resources */,
+				165517F91CAE151000CAAEE3 /* LaunchScreen.storyboard in Resources */,
+				165517F61CAE151000CAAEE3 /* Assets.xcassets in Resources */,
+				165517F41CAE151000CAAEE3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		16068BE51C9126FA00685B2F /* Resources */ = {
+		165517FD1CAE151000CAAEE3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		16068BF01C9126FA00685B2F /* Resources */ = {
+		165518081CAE151000CAAEE3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -255,59 +255,59 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		16068BCF1C9126FA00685B2F /* Sources */ = {
+		165517E71CAE151000CAAEE3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16068BD91C9126FA00685B2F /* ViewController.swift in Sources */,
-				16068BD71C9126FA00685B2F /* AppDelegate.swift in Sources */,
+				165517F11CAE151000CAAEE3 /* ViewController.swift in Sources */,
+				165517EF1CAE151000CAAEE3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		16068BE31C9126FA00685B2F /* Sources */ = {
+		165517FB1CAE151000CAAEE3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16068BEC1C9126FA00685B2F /* NorseCourseTests.swift in Sources */,
+				165518041CAE151000CAAEE3 /* NorseCourseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		16068BEE1C9126FA00685B2F /* Sources */ = {
+		165518061CAE151000CAAEE3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16068BF71C9126FA00685B2F /* NorseCourseUITests.swift in Sources */,
+				1655180F1CAE151000CAAEE3 /* NorseCourseUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		16068BE91C9126FA00685B2F /* PBXTargetDependency */ = {
+		165518011CAE151000CAAEE3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 16068BD21C9126FA00685B2F /* NorseCourse */;
-			targetProxy = 16068BE81C9126FA00685B2F /* PBXContainerItemProxy */;
+			target = 165517EA1CAE151000CAAEE3 /* NorseCourse */;
+			targetProxy = 165518001CAE151000CAAEE3 /* PBXContainerItemProxy */;
 		};
-		16068BF41C9126FA00685B2F /* PBXTargetDependency */ = {
+		1655180C1CAE151000CAAEE3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 16068BD21C9126FA00685B2F /* NorseCourse */;
-			targetProxy = 16068BF31C9126FA00685B2F /* PBXContainerItemProxy */;
+			target = 165517EA1CAE151000CAAEE3 /* NorseCourse */;
+			targetProxy = 1655180B1CAE151000CAAEE3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		16068BDA1C9126FA00685B2F /* Main.storyboard */ = {
+		165517F21CAE151000CAAEE3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				16068BDB1C9126FA00685B2F /* Base */,
+				165517F31CAE151000CAAEE3 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		16068BDF1C9126FA00685B2F /* LaunchScreen.storyboard */ = {
+		165517F71CAE151000CAAEE3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				16068BE01C9126FA00685B2F /* Base */,
+				165517F81CAE151000CAAEE3 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -315,10 +315,11 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		16068BF91C9126FA00685B2F /* Debug */ = {
+		165518111CAE151000CAAEE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -351,7 +352,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -360,10 +361,11 @@
 			};
 			name = Debug;
 		};
-		16068BFA1C9126FA00685B2F /* Release */ = {
+		165518121CAE151000CAAEE3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -390,7 +392,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -398,7 +400,7 @@
 			};
 			name = Release;
 		};
-		16068BFC1C9126FA00685B2F /* Debug */ = {
+		165518141CAE151000CAAEE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -409,7 +411,7 @@
 			};
 			name = Debug;
 		};
-		16068BFD1C9126FA00685B2F /* Release */ = {
+		165518151CAE151000CAAEE3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -420,7 +422,7 @@
 			};
 			name = Release;
 		};
-		16068BFF1C9126FA00685B2F /* Debug */ = {
+		165518171CAE151000CAAEE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -432,7 +434,7 @@
 			};
 			name = Debug;
 		};
-		16068C001C9126FA00685B2F /* Release */ = {
+		165518181CAE151000CAAEE3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -444,7 +446,7 @@
 			};
 			name = Release;
 		};
-		16068C021C9126FA00685B2F /* Debug */ = {
+		1655181A1CAE151000CAAEE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = NorseCourseUITests/Info.plist;
@@ -452,11 +454,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.blaise2s.NorseCourseUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = NorseCourse;
-				USES_XCTRUNNER = YES;
 			};
 			name = Debug;
 		};
-		16068C031C9126FA00685B2F /* Release */ = {
+		1655181B1CAE151000CAAEE3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = NorseCourseUITests/Info.plist;
@@ -464,47 +465,46 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.blaise2s.NorseCourseUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = NorseCourse;
-				USES_XCTRUNNER = YES;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		16068BCE1C9126F900685B2F /* Build configuration list for PBXProject "NorseCourse" */ = {
+		165517E61CAE151000CAAEE3 /* Build configuration list for PBXProject "NorseCourse" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				16068BF91C9126FA00685B2F /* Debug */,
-				16068BFA1C9126FA00685B2F /* Release */,
+				165518111CAE151000CAAEE3 /* Debug */,
+				165518121CAE151000CAAEE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		16068BFB1C9126FA00685B2F /* Build configuration list for PBXNativeTarget "NorseCourse" */ = {
+		165518131CAE151000CAAEE3 /* Build configuration list for PBXNativeTarget "NorseCourse" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				16068BFC1C9126FA00685B2F /* Debug */,
-				16068BFD1C9126FA00685B2F /* Release */,
+				165518141CAE151000CAAEE3 /* Debug */,
+				165518151CAE151000CAAEE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		16068BFE1C9126FA00685B2F /* Build configuration list for PBXNativeTarget "NorseCourseTests" */ = {
+		165518161CAE151000CAAEE3 /* Build configuration list for PBXNativeTarget "NorseCourseTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				16068BFF1C9126FA00685B2F /* Debug */,
-				16068C001C9126FA00685B2F /* Release */,
+				165518171CAE151000CAAEE3 /* Debug */,
+				165518181CAE151000CAAEE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		16068C011C9126FA00685B2F /* Build configuration list for PBXNativeTarget "NorseCourseUITests" */ = {
+		165518191CAE151000CAAEE3 /* Build configuration list for PBXNativeTarget "NorseCourseUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				16068C021C9126FA00685B2F /* Debug */,
-				16068C031C9126FA00685B2F /* Release */,
+				1655181A1CAE151000CAAEE3 /* Debug */,
+				1655181B1CAE151000CAAEE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 16068BCB1C9126F900685B2F /* Project object */;
+	rootObject = 165517E31CAE151000CAAEE3 /* Project object */;
 }
