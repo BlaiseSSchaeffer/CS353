@@ -32,12 +32,17 @@ class TweetTableViewCell: UITableViewCell {
         if let tweet = self.tweet {
             tweetTextLabel?.text = tweet.text
             if tweetTextLabel?.text != nil {
+                
+                for _ in tweet.media {
+                    tweetTextLabel.text! += " 📷"
+                }
+                
                 let attributedText = tweetTextLabel.attributedText as? NSMutableAttributedString
                 
                 let users = tweet.userMentions
                 let hashtags = tweet.hashtags
                 let urls = tweet.urls
-                
+                                
                 for user in users {
                     attributedText?.addAttributes([NSForegroundColorAttributeName : UIColor.blueColor()], range: user.nsrange)
                 }
@@ -49,11 +54,9 @@ class TweetTableViewCell: UITableViewCell {
                 for url in urls {
                     attributedText?.addAttributes([NSForegroundColorAttributeName : UIColor.lightGrayColor()], range: url.nsrange)
                 }
+        
                 tweetTextLabel.attributedText = attributedText
                 
-                for _ in tweet.media {
-                    tweetTextLabel.text! += " 📷"
-                }
             }
             
             tweetScreenNameLabel?.text = "\(tweet.user)" // tweet.user.description

@@ -10,8 +10,27 @@ import UIKit
 
 class TweetDetailTableViewController: UITableViewController {
     
+    private var images: Mentions?
+    private var hastags: Mentions?
+    private var users: Mentions?
+    private var urls: Mentions?
     
-
+    var tweet: Tweet? {
+        didSet {
+            images = .Image(tweet!.media)
+            hastags = .Hashtag(tweet!.hashtags)
+            users = .User(tweet!.userMentions)
+            urls = .URL(tweet!.urls)
+            
+            print(tweet)
+            print()
+            print(images!.count)
+            print(hastags!.count)
+            print(users!.count)
+            print(urls!.count)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,18 +41,18 @@ class TweetDetailTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+//    override func didReceiveMemoryWarning() {
+//        super.didReceiveMemoryWarning()
+//        // Dispose of any resources that can be recreated.
+//    }
 
     // MARK: - Table view data source
     
     private enum Mentions {
-        case Image([String])
-        case URL([String])
-        case Hashtag([String])
-        case User([String])
+        case Image([MediaItem])
+        case URL([Tweet.IndexedKeyword])
+        case Hashtag([Tweet.IndexedKeyword])
+        case User([Tweet.IndexedKeyword])
         
         var titleForHeaderInSection: String {
             get {
@@ -49,11 +68,26 @@ class TweetDetailTableViewController: UITableViewController {
                 }
             }
         }
+        
+        var count: Int {
+            get {
+                switch self {
+                case .Image(let media):
+                    return media.count
+                case .Hashtag(let hashtag):
+                    return hashtag.count
+                case .User(let user):
+                    return user.count
+                case .URL(let url):
+                    return url.count
+                }
+            }
+        }
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 4
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
