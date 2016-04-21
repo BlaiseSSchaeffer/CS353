@@ -9,7 +9,34 @@
 import UIKit
 
 class TweetTableViewController: UITableViewController, UITextFieldDelegate {
+    
     var tweets = [[Tweet]]()
+    
+    var lastSuccessfulRequest: TwitterRequest?
+    var nextRequestToAttempt: TwitterRequest? {
+        if lastSuccessfulRequest == nil {
+            if searchText != nil {
+                var query = searchText!
+                if query.hasPrefix("@") {
+                    query = "\(query) OR from:\(query)"
+                }
+                return TwitterRequest(search: query, count: 100)
+            } else {
+                return nil
+            }
+        } else {
+            return lastSuccessfulRequest!.requestForNewer
+        }
+    }
+    
+    @IBOutlet weak var searchTextField: UITextField! {
+        didSet {
+            searchTextField.delegate = self
+            searchTextField.text = searchText
+        }
+        
+    }
+    
     var searchText: String? = "#luthercollege" {
         didSet {
             lastSuccessfulRequest = nil
@@ -19,35 +46,37 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
             refresh()
         }
     }
-
-    // MARK: - View Controller Life Cycle
     
+    // MARK: - View Controller Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.estimatedRowHeight = tableView.rowHeight
-        tableView.rowHeight = UITableViewAutomaticDimension
-        refresh()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-    
-    var lastSuccessfulRequest: TwitterRequest?
-    var nextRequestToAttempt: TwitterRequest? {
-        if lastSuccessfulRequest == nil {
-            if searchText != nil {
-                return TwitterRequest(search: searchText!, count: 100)
-            } else {
-                return nil
+        if NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1 {
+            tableView.estimatedRowHeight = tableView.rowHeight
+            tableView.rowHeight = UITableViewAutomaticDimension
+        }
+        
+        if let first = navigationController?.viewControllers.first as? TweetTableViewController {
+            if first == self {
+                navigationItem.rightBarButtonItem = nil
             }
+        }
+ 
+//        let imageButton = UIBarButtonItem(barButtonSystemItem: .Camera, target: self, action: #selector(TweetTableViewController.showImages(_:)))
+//        if let existingButton = navigationItem.rightBarButtonItem {
+//            navigationItem.rightBarButtonItems = [existingButton, imageButton]
+//        } else {
+//            navigationItem.rightBarButtonItem = imageButton
+//        }        
+
+        if tweets.count == 0 {
+            refresh()
         } else {
-            return lastSuccessfulRequest!.requestForNewer
+            searchTextField.text = "@" + tweets.first!.first!.user.screenName
+            tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, tableView.numberOfSections)), withRowAnimation: .None)
         }
     }
-    
+
     func refresh() {
         if refreshControl != nil {
             refreshControl?.beginRefreshing()
@@ -57,16 +86,20 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
     
     @IBAction func refresh(sender: UIRefreshControl?) {
         if searchText != nil {
+            RecentSearches().add(searchText!)
             if let request = nextRequestToAttempt {
+                self.lastSuccessfulRequest = request // oops, forgot this line in lecture
                 request.fetchTweets { (newTweets) -> Void in
-                    dispatch_async(dispatch_get_main_queue()) {
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         if newTweets.count > 0 {
-                            self.lastSuccessfulRequest = request
                             self.tweets.insert(newTweets, atIndex: 0)
                             self.tableView.reloadData()
+                            self.tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, self.tableView.numberOfSections)), withRowAnimation: .None)
+                            sender?.endRefreshing()
+                            self.title = self.searchText
                         }
                         sender?.endRefreshing()
-                    }
+                    })
                 }
             }
         } else {
@@ -74,12 +107,7 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
         }
     }
     
-    @IBOutlet weak var searchTextField: UITextField! {
-        didSet {
-            searchTextField.delegate = self
-            searchTextField.text = searchText
-        }
-    }
+    // MARK: - UITextFieldDelegate
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField == searchTextField {
@@ -88,7 +116,7 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
         }
         return true
     }
-
+    
     // MARK: - UITableViewDataSource
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -99,70 +127,63 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
         return tweets[section].count
     }
 
-    
     private struct Storyboard {
         static let CellReuseIdentifier = "Tweet"
+        static let MentionsIdentifier = "Show Mentions"
+        static let ImagesIdentifier = "Show Images"
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.CellReuseIdentifier, forIndexPath: indexPath) as! TweetTableViewCell
 
-        // Configure the cell...
         cell.tweet = tweets[indexPath.section][indexPath.row]
-        
+
         return cell
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
+    
+    // MARK: - Navitation
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if identifier == Storyboard.MentionsIdentifier {
+            if let tweetCell = sender as? TweetTableViewCell {
+                if tweetCell.tweet!.hashtags.count + tweetCell.tweet!.urls.count + tweetCell.tweet!.userMentions.count + tweetCell.tweet!.media.count == 0 {
+                    return false
+                }
+            }
+        }
         return true
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let destination = segue.destinationViewController as? TweetDetailTableViewController {
-            if let cell = sender as? TweetTableViewCell {
-                destination.tweet = cell.tweet
+        if let identifier = segue.identifier {
+            if identifier == Storyboard.MentionsIdentifier {
+                if let mtvc = segue.destinationViewController as? MentionsTableViewController {
+                    if let tweetCell = sender as? TweetTableViewCell {
+                        mtvc.tweet = tweetCell.tweet
+                    }
+                }
+            } else if identifier == Storyboard.ImagesIdentifier {
+                if let icvc = segue.destinationViewController as? ImageCollectionViewController {
+                    icvc.tweets = tweets
+                    icvc.title = "Images: \(searchText!)"
+                }
             }
         }
     }
+    
+    @IBAction func unwindToRoot(sender: UIStoryboardSegue) { }
+    
+    func showImages(sender: UIBarButtonItem) {
+        performSegueWithIdentifier(Storyboard.ImagesIdentifier, sender: sender)
+    }
+    
+    override func canPerformUnwindSegueAction(action: Selector, fromViewController: UIViewController, withSender sender: AnyObject) -> Bool {
+        if let first = navigationController?.viewControllers.first as? TweetTableViewController {
+            if first == self {
+                return true
+            }
+        }
+        return false
+    }
+    
 }

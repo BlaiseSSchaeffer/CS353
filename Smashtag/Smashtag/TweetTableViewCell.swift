@@ -8,62 +8,57 @@
 
 import UIKit
 
-class TweetTableViewCell: UITableViewCell {
-    
+class TweetTableViewCell: UITableViewCell
+{
     var tweet: Tweet? {
         didSet {
             updateUI()
         }
     }
+    var hashtagColor = UIColor.darkGrayColor()
+    var urlColor = UIColor.lightGrayColor()
+    var userMentionsColor = UIColor.blueColor()
     
     @IBOutlet weak var tweetProfileImageView: UIImageView!
     @IBOutlet weak var tweetScreenNameLabel: UILabel!
     @IBOutlet weak var tweetTextLabel: UILabel!
     @IBOutlet weak var tweetCreatedLabel: UILabel!
-
+    
     func updateUI() {
-        // Reset any existing tweet information
         tweetTextLabel?.attributedText = nil
         tweetScreenNameLabel?.text = nil
         tweetProfileImageView?.image = nil
         tweetCreatedLabel?.text = nil
         
-        // Load new information for our Tweet (if any)
         if let tweet = self.tweet {
-            tweetTextLabel?.text = tweet.text
-            if tweetTextLabel?.text != nil {
-                
-                for _ in tweet.media {
-                    tweetTextLabel.text! += " 📷"
-                }
-                
-                let attributedText = tweetTextLabel.attributedText as? NSMutableAttributedString
-                
-                let users = tweet.userMentions
-                let hashtags = tweet.hashtags
-                let urls = tweet.urls
-                                
-                for user in users {
-                    attributedText?.addAttributes([NSForegroundColorAttributeName : UIColor.blueColor()], range: user.nsrange)
-                }
-                
-                for hashtag in hashtags {
-                    attributedText?.addAttributes([NSForegroundColorAttributeName : UIColor.darkGrayColor()], range: hashtag.nsrange)
-                }
-                
-                for url in urls {
-                    attributedText?.addAttributes([NSForegroundColorAttributeName : UIColor.lightGrayColor()], range: url.nsrange)
-                }
-        
-                tweetTextLabel.attributedText = attributedText
-                
+            var text = tweet.text
+            
+            for _ in tweet.media {
+                text += " 📷"
             }
             
-            tweetScreenNameLabel?.text = "\(tweet.user)" // tweet.user.description
+            let attributedText = NSMutableAttributedString(string: text)
+            attributedText.changeKeywordsColor(tweet.hashtags, color: hashtagColor)
+            attributedText.changeKeywordsColor(tweet.urls, color: urlColor)
+            attributedText.changeKeywordsColor(tweet.userMentions, color: userMentionsColor)
             
+            attributedText.changeKeywordsColor(tweet.mediaMentions, color: urlColor)
+            
+            tweetTextLabel?.attributedText = attributedText
+            
+            tweetScreenNameLabel?.text = "\(tweet.user)"
+            
+            self.tweetProfileImageView?.image = nil
             if let profileImageURL = tweet.user.profileImageURL {
-                if let imageData = NSData(contentsOfURL: profileImageURL) { // blocks main thread!
-                    tweetProfileImageView?.image = UIImage(data: imageData)
+                dispatch_async(dispatch_get_global_queue(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1 ? Int(QOS_CLASS_USER_INITIATED.rawValue) : DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
+                    let imageData = NSData(contentsOfURL: profileImageURL)
+                    dispatch_async(dispatch_get_main_queue()) {
+                        if profileImageURL == tweet.user.profileImageURL {
+                            if imageData != nil {
+                                self.tweetProfileImageView?.image = UIImage(data: imageData!)
+                            }
+                        }
+                    }
                 }
             }
             
@@ -74,8 +69,22 @@ class TweetTableViewCell: UITableViewCell {
                 formatter.timeStyle = NSDateFormatterStyle.ShortStyle
             }
             tweetCreatedLabel?.text = formatter.stringFromDate(tweet.created)
+            
+            if tweet.hashtags.count + tweet.urls.count + tweet.userMentions.count + tweet.media.count > 0 {
+                accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+            } else {
+                accessoryType = UITableViewCellAccessoryType.None
+            }
         }
     }
-    
-    
+}
+
+// MARK: - Extensions
+
+private extension NSMutableAttributedString {
+    func changeKeywordsColor(keywords: [Tweet.IndexedKeyword], color: UIColor) {
+        for keyword in keywords {
+            addAttribute(NSForegroundColorAttributeName, value: color, range: keyword.nsrange)
+        }
+    }
 }

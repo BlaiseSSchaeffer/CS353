@@ -24,8 +24,8 @@ private var twitterAccount: ACAccount?
 
 public class TwitterRequest
 {
-    public let requestType: String
-    public let parameters: [String:String]
+    public var requestType: String
+    public var parameters = Dictionary<String, String>()
     
     // designated initializer
     public init(_ requestType: String, _ parameters: Dictionary<String, String> = [:]) {
@@ -181,7 +181,7 @@ public class TwitterRequest
     
     // modifies parameters in an existing request to create a new one
     
-    private func modifiedRequest(parametersToChange: [String: String], clearCount: Bool = false) -> TwitterRequest {
+    private func modifiedRequest(parametersToChange: Dictionary<String, String>, clearCount: Bool = false) -> TwitterRequest {
         var newParameters = parameters
         for (key, value) in parametersToChange {
             newParameters[key] = value
