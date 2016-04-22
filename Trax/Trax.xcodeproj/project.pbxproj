@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		161AC1AF1CC9C202004B431E /* GPX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161AC1AE1CC9C202004B431E /* GPX.swift */; };
 		16C872711CC90CA4007FC536 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C872701CC90CA4007FC536 /* AppDelegate.swift */; };
-		16C872731CC90CA4007FC536 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C872721CC90CA4007FC536 /* ViewController.swift */; };
+		16C872731CC90CA4007FC536 /* GPXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C872721CC90CA4007FC536 /* GPXViewController.swift */; };
 		16C872761CC90CA4007FC536 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16C872741CC90CA4007FC536 /* Main.storyboard */; };
 		16C872781CC90CA4007FC536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16C872771CC90CA4007FC536 /* Assets.xcassets */; };
 		16C8727B1CC90CA4007FC536 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16C872791CC90CA4007FC536 /* LaunchScreen.storyboard */; };
@@ -35,9 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		161AC1AE1CC9C202004B431E /* GPX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPX.swift; sourceTree = "<group>"; };
 		16C8726D1CC90CA4007FC536 /* Trax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C872701CC90CA4007FC536 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		16C872721CC90CA4007FC536 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		16C872721CC90CA4007FC536 /* GPXViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPXViewController.swift; sourceTree = "<group>"; };
 		16C872751CC90CA4007FC536 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		16C872771CC90CA4007FC536 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16C8727A1CC90CA4007FC536 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,7 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				16C872701CC90CA4007FC536 /* AppDelegate.swift */,
-				16C872721CC90CA4007FC536 /* ViewController.swift */,
+				16C872721CC90CA4007FC536 /* GPXViewController.swift */,
 				16C872741CC90CA4007FC536 /* Main.storyboard */,
 				16C872A01CC90D46007FC536 /* Supporting Files */,
 			);
@@ -129,6 +131,7 @@
 		16C872A01CC90D46007FC536 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				161AC1AE1CC9C202004B431E /* GPX.swift */,
 				16C872771CC90CA4007FC536 /* Assets.xcassets */,
 				16C872791CC90CA4007FC536 /* LaunchScreen.storyboard */,
 				16C8727C1CC90CA4007FC536 /* Info.plist */,
@@ -271,8 +274,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16C872731CC90CA4007FC536 /* ViewController.swift in Sources */,
+				16C872731CC90CA4007FC536 /* GPXViewController.swift in Sources */,
 				16C872711CC90CA4007FC536 /* AppDelegate.swift in Sources */,
+				161AC1AF1CC9C202004B431E /* GPX.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +503,7 @@
 				16C872971CC90CA5007FC536 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		16C872981CC90CA5007FC536 /* Build configuration list for PBXNativeTarget "TraxTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +512,7 @@
 				16C8729A1CC90CA5007FC536 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		16C8729B1CC90CA5007FC536 /* Build configuration list for PBXNativeTarget "TraxUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +521,7 @@
 				16C8729D1CC90CA5007FC536 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
