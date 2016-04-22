@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "3FC31C4CC5F71DDCAE3F463C9285CF172C910D9D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6197BA5601A7509F9B0A0FCC77F39146BD241F31" : 0,
+    "3FC31C4CC5F71DDCAE3F463C9285CF172C910D9D" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "14CC44E9-24E4-49CA-A7F6-52F89F339EE0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6197BA5601A7509F9B0A0FCC77F39146BD241F31" : "",
+    "3FC31C4CC5F71DDCAE3F463C9285CF172C910D9D" : "Smashtag\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Smashtag",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Smashtag.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:m2mtech\/smashtag-2015.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3FC31C4CC5F71DDCAE3F463C9285CF172C910D9D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:BlaiseSSchaeffer\/CS353.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6197BA5601A7509F9B0A0FCC77F39146BD241F31"
+    }
+  ]
+}
