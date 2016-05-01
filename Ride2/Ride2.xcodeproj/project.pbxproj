@@ -1,0 +1,529 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		161595541CD17B7400AED01F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161595531CD17B7400AED01F /* AppDelegate.swift */; };
+		161595591CD17B7400AED01F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 161595571CD17B7400AED01F /* Main.storyboard */; };
+		1615955B1CD17B7400AED01F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1615955A1CD17B7400AED01F /* Assets.xcassets */; };
+		1615955E1CD17B7400AED01F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1615955C1CD17B7400AED01F /* LaunchScreen.storyboard */; };
+		161595691CD17B7500AED01F /* Ride2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161595681CD17B7500AED01F /* Ride2Tests.swift */; };
+		161595741CD17B7500AED01F /* Ride2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161595731CD17B7500AED01F /* Ride2UITests.swift */; };
+		161595871CD1946400AED01F /* RideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161595861CD1946400AED01F /* RideViewController.swift */; };
+		161595891CD1980700AED01F /* RideNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161595881CD1980700AED01F /* RideNavigationController.swift */; };
+		16DB25F81CD23B6200B5A191 /* RideTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DB25F71CD23B6200B5A191 /* RideTableViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		161595651CD17B7500AED01F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 161595481CD17B7200AED01F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1615954F1CD17B7200AED01F;
+			remoteInfo = Ride2;
+		};
+		161595701CD17B7500AED01F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 161595481CD17B7200AED01F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1615954F1CD17B7200AED01F;
+			remoteInfo = Ride2;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		161595501CD17B7200AED01F /* Ride2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ride2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		161595531CD17B7400AED01F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		161595581CD17B7400AED01F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1615955A1CD17B7400AED01F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1615955D1CD17B7400AED01F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1615955F1CD17B7400AED01F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		161595641CD17B7500AED01F /* Ride2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Ride2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		161595681CD17B7500AED01F /* Ride2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ride2Tests.swift; sourceTree = "<group>"; };
+		1615956A1CD17B7500AED01F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1615956F1CD17B7500AED01F /* Ride2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Ride2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		161595731CD17B7500AED01F /* Ride2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ride2UITests.swift; sourceTree = "<group>"; };
+		161595751CD17B7500AED01F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		161595861CD1946400AED01F /* RideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideViewController.swift; sourceTree = "<group>"; };
+		161595881CD1980700AED01F /* RideNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideNavigationController.swift; sourceTree = "<group>"; };
+		16DB25F71CD23B6200B5A191 /* RideTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RideTableViewController.swift; path = ../RideTableViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1615954D1CD17B7200AED01F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		161595611CD17B7500AED01F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1615956C1CD17B7500AED01F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		161595471CD17B7200AED01F = {
+			isa = PBXGroup;
+			children = (
+				161595521CD17B7400AED01F /* Ride2 */,
+				161595671CD17B7500AED01F /* Ride2Tests */,
+				161595721CD17B7500AED01F /* Ride2UITests */,
+				161595511CD17B7200AED01F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		161595511CD17B7200AED01F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				161595501CD17B7200AED01F /* Ride2.app */,
+				161595641CD17B7500AED01F /* Ride2Tests.xctest */,
+				1615956F1CD17B7500AED01F /* Ride2UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		161595521CD17B7400AED01F /* Ride2 */ = {
+			isa = PBXGroup;
+			children = (
+				161595881CD1980700AED01F /* RideNavigationController.swift */,
+				16DB25F71CD23B6200B5A191 /* RideTableViewController.swift */,
+				161595861CD1946400AED01F /* RideViewController.swift */,
+				161595571CD17B7400AED01F /* Main.storyboard */,
+				161595531CD17B7400AED01F /* AppDelegate.swift */,
+				161595811CD17B8E00AED01F /* Supporting Files */,
+			);
+			path = Ride2;
+			sourceTree = "<group>";
+		};
+		161595671CD17B7500AED01F /* Ride2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				161595681CD17B7500AED01F /* Ride2Tests.swift */,
+				1615956A1CD17B7500AED01F /* Info.plist */,
+			);
+			path = Ride2Tests;
+			sourceTree = "<group>";
+		};
+		161595721CD17B7500AED01F /* Ride2UITests */ = {
+			isa = PBXGroup;
+			children = (
+				161595731CD17B7500AED01F /* Ride2UITests.swift */,
+				161595751CD17B7500AED01F /* Info.plist */,
+			);
+			path = Ride2UITests;
+			sourceTree = "<group>";
+		};
+		161595811CD17B8E00AED01F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1615955A1CD17B7400AED01F /* Assets.xcassets */,
+				1615955C1CD17B7400AED01F /* LaunchScreen.storyboard */,
+				1615955F1CD17B7400AED01F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1615954F1CD17B7200AED01F /* Ride2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 161595781CD17B7500AED01F /* Build configuration list for PBXNativeTarget "Ride2" */;
+			buildPhases = (
+				1615954C1CD17B7200AED01F /* Sources */,
+				1615954D1CD17B7200AED01F /* Frameworks */,
+				1615954E1CD17B7200AED01F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ride2;
+			productName = Ride2;
+			productReference = 161595501CD17B7200AED01F /* Ride2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		161595631CD17B7500AED01F /* Ride2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1615957B1CD17B7500AED01F /* Build configuration list for PBXNativeTarget "Ride2Tests" */;
+			buildPhases = (
+				161595601CD17B7500AED01F /* Sources */,
+				161595611CD17B7500AED01F /* Frameworks */,
+				161595621CD17B7500AED01F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				161595661CD17B7500AED01F /* PBXTargetDependency */,
+			);
+			name = Ride2Tests;
+			productName = Ride2Tests;
+			productReference = 161595641CD17B7500AED01F /* Ride2Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1615956E1CD17B7500AED01F /* Ride2UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1615957E1CD17B7500AED01F /* Build configuration list for PBXNativeTarget "Ride2UITests" */;
+			buildPhases = (
+				1615956B1CD17B7500AED01F /* Sources */,
+				1615956C1CD17B7500AED01F /* Frameworks */,
+				1615956D1CD17B7500AED01F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				161595711CD17B7500AED01F /* PBXTargetDependency */,
+			);
+			name = Ride2UITests;
+			productName = Ride2UITests;
+			productReference = 1615956F1CD17B7500AED01F /* Ride2UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		161595481CD17B7200AED01F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Blaise2s;
+				TargetAttributes = {
+					1615954F1CD17B7200AED01F = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 8XV24NFT5Q;
+					};
+					161595631CD17B7500AED01F = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 8XV24NFT5Q;
+						TestTargetID = 1615954F1CD17B7200AED01F;
+					};
+					1615956E1CD17B7500AED01F = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 8XV24NFT5Q;
+						TestTargetID = 1615954F1CD17B7200AED01F;
+					};
+				};
+			};
+			buildConfigurationList = 1615954B1CD17B7200AED01F /* Build configuration list for PBXProject "Ride2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 161595471CD17B7200AED01F;
+			productRefGroup = 161595511CD17B7200AED01F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1615954F1CD17B7200AED01F /* Ride2 */,
+				161595631CD17B7500AED01F /* Ride2Tests */,
+				1615956E1CD17B7500AED01F /* Ride2UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1615954E1CD17B7200AED01F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1615955E1CD17B7400AED01F /* LaunchScreen.storyboard in Resources */,
+				1615955B1CD17B7400AED01F /* Assets.xcassets in Resources */,
+				161595591CD17B7400AED01F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		161595621CD17B7500AED01F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1615956D1CD17B7500AED01F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1615954C1CD17B7200AED01F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				161595871CD1946400AED01F /* RideViewController.swift in Sources */,
+				161595891CD1980700AED01F /* RideNavigationController.swift in Sources */,
+				161595541CD17B7400AED01F /* AppDelegate.swift in Sources */,
+				16DB25F81CD23B6200B5A191 /* RideTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		161595601CD17B7500AED01F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				161595691CD17B7500AED01F /* Ride2Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1615956B1CD17B7500AED01F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				161595741CD17B7500AED01F /* Ride2UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		161595661CD17B7500AED01F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1615954F1CD17B7200AED01F /* Ride2 */;
+			targetProxy = 161595651CD17B7500AED01F /* PBXContainerItemProxy */;
+		};
+		161595711CD17B7500AED01F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1615954F1CD17B7200AED01F /* Ride2 */;
+			targetProxy = 161595701CD17B7500AED01F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		161595571CD17B7400AED01F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				161595581CD17B7400AED01F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1615955C1CD17B7400AED01F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1615955D1CD17B7400AED01F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		161595761CD17B7500AED01F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		161595771CD17B7500AED01F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		161595791CD17B7500AED01F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Ride2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blaise2s.Ride2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1615957A1CD17B7500AED01F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Ride2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blaise2s.Ride2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1615957C1CD17B7500AED01F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = Ride2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blaise2s.Ride2Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ride2.app/Ride2";
+			};
+			name = Debug;
+		};
+		1615957D1CD17B7500AED01F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = Ride2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blaise2s.Ride2Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ride2.app/Ride2";
+			};
+			name = Release;
+		};
+		1615957F1CD17B7500AED01F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Ride2UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blaise2s.Ride2UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Ride2;
+			};
+			name = Debug;
+		};
+		161595801CD17B7500AED01F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Ride2UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blaise2s.Ride2UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Ride2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1615954B1CD17B7200AED01F /* Build configuration list for PBXProject "Ride2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				161595761CD17B7500AED01F /* Debug */,
+				161595771CD17B7500AED01F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		161595781CD17B7500AED01F /* Build configuration list for PBXNativeTarget "Ride2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				161595791CD17B7500AED01F /* Debug */,
+				1615957A1CD17B7500AED01F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1615957B1CD17B7500AED01F /* Build configuration list for PBXNativeTarget "Ride2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1615957C1CD17B7500AED01F /* Debug */,
+				1615957D1CD17B7500AED01F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1615957E1CD17B7500AED01F /* Build configuration list for PBXNativeTarget "Ride2UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1615957F1CD17B7500AED01F /* Debug */,
+				161595801CD17B7500AED01F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 161595481CD17B7200AED01F /* Project object */;
+}

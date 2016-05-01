@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gol-f5-7YA">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Ride-->
+        <scene sceneID="Z6B-MT-fh4">
+            <objects>
+                <viewController id="1Iy-6W-mA0" customClass="RideViewController" customModule="Ride2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2MF-Er-diy"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cwk-WW-Fob"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IHF-o0-65N">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5sq-fs-CQA">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="rideEntryCell" textLabel="aV5-M1-kIn" rowHeight="100" style="IBUITableViewCellStyleDefault" id="NLj-Mf-8n2">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NLj-Mf-8n2" id="mrx-M3-cor">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aV5-M1-kIn">
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="99"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5sq-fs-CQA" firstAttribute="leading" secondItem="IHF-o0-65N" secondAttribute="leading" id="1Nj-Yg-gnz"/>
+                            <constraint firstItem="5sq-fs-CQA" firstAttribute="top" secondItem="2MF-Er-diy" secondAttribute="bottom" id="CAb-A5-OXn"/>
+                            <constraint firstAttribute="trailing" secondItem="5sq-fs-CQA" secondAttribute="trailing" id="cKA-4l-6E1"/>
+                            <constraint firstItem="5sq-fs-CQA" firstAttribute="bottom" secondItem="Cwk-WW-Fob" secondAttribute="top" id="gax-ZB-whs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Ride" id="jNL-ua-tzZ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zjp-Cb-Zts">
+                            <color key="tintColor" red="0.80392156859999997" green="0.86274509799999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="navigationBar" destination="jNL-ua-tzZ" id="If2-N1-t0O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZDP-2p-aPC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2296" y="504"/>
+        </scene>
+        <!--Ride Navigation Controller-->
+        <scene sceneID="qQN-hg-tA2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gol-f5-7YA" customClass="RideNavigationController" customModule="Ride2" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OZw-r1-ch5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1Iy-6W-mA0" kind="relationship" relationship="rootViewController" id="eCV-VS-F82"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bca-fR-6C6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1484" y="504"/>
+        </scene>
+    </scenes>
+</document>

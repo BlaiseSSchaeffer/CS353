@@ -10,4 +10,19 @@ import UIKit
 
 class EntryTableViewController: UITableViewController {
 
+    @IBOutlet weak var headerView: UIView!
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return headerView
+    }
+    
+    
+//    @IBAction func addButton() {
+//        print("Adding a Ride")
+//    }
+
 }
