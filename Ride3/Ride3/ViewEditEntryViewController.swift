@@ -7,20 +7,33 @@
 //
 
 import UIKit
+import QuartzCore
 
 class ViewEditEntryViewController: UIViewController {
     
-    var rideEntry: RideEntry? {
-        didSet {
-            updateUI()
-        }
-    }
+    var rideEntry: RideEntry?
+    var image: UIImage?
     
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var rideImageView: UIImageView?
+    
+//    override func viewWillAppear(animated: Bool) {
+//        distanceLabel.layer.cornerRadius = 5
+//    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        distanceLabel.layer.cornerRadius = 2
+        updateUI()
+    }
     
     func updateUI() {
-//        titleLabel.text = rideEntry?.title
-//        distanceLabel.text = "\(rideEntry?.distance)"
+        self.title = rideEntry!.title
+        distanceLabel.text = "\(rideEntry!.distance!) mi"
+        
+        if (image != nil) {
+            rideImageView?.image = image
+        }
     }
+
 }

@@ -15,15 +15,15 @@ class RideEntryTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var rideImageView: UIImageView!
     
     func updateUI() {
         titleLabel.text = rideEntry!.title
-        distanceLabel.text = "\(rideEntry!.distance) \(unitOfMeasure)"
+        distanceLabel.text = "\(rideEntry!.distance!) \(unitOfMeasure)"
     }
     
     func configure(entryData: RideEntry) {
         rideEntry = entryData
-        print(rideEntry?.title)
         updateUI()
     }
     

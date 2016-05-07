@@ -11,6 +11,11 @@ import UIKit
 class NewRideEntryViewController: UIViewController {
     
     var rideEntry: RideEntry?
+    var defaults = NSUserDefaults.standardUserDefaults()
+    
+    private struct Storyboard {
+        static let RideEntreisObjectKey = "SavedRideEntries"
+    }
     
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var distanceField: UITextField!
@@ -21,12 +26,21 @@ class NewRideEntryViewController: UIViewController {
     }
     
     @IBAction func save(sender: AnyObject) {
-        if let title = titleField.text {
+        if let title = titleField.text where title != "" {
             if let distance = distanceField.text {
                 rideEntry = RideEntry(rideTitle: title, distance: (distance as NSString).floatValue)
-                print(rideEntry!.title, rideEntry!.distance)
+                
+                if let decodedEntries = defaults.objectForKey(Storyboard.RideEntreisObjectKey) as? NSData {
+                    if var entries = NSKeyedUnarchiver.unarchiveObjectWithData(decodedEntries) as? [RideEntry] {
+                        entries.insert(rideEntry!, atIndex: 0)
+                        
+                        let encodedEntries = NSKeyedArchiver.archivedDataWithRootObject(entries)
+                        defaults.setObject(encodedEntries, forKey: Storyboard.RideEntreisObjectKey)
+                    }
+                }
             }
         }
+        self.dismissViewControllerAnimated(true) {}
     }
 
 }

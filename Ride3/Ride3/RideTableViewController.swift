@@ -9,36 +9,66 @@
 import UIKit
 
 class RideTableViewController: UITableViewController {
-    var rideEntries: [RideEntry] = [
-        RideEntry(rideTitle: "First Ride", distance: 13),
-        RideEntry(rideTitle: "Madison Loop", distance: 27),
-        RideEntry(rideTitle: "Kendalville Ride", distance: 49),
-        RideEntry(rideTitle: "Prairie Farm Trial", distance: 50),
-        RideEntry(rideTitle: "Castalia", distance: 42),
-        RideEntry(rideTitle: "Waukon Loop", distance: 53),
-        RideEntry(rideTitle: "Cedar Falls and Flowers", distance: 37),
-        RideEntry(rideTitle: "Reverse Inaugural", distance: 29),
-        RideEntry(rideTitle: "Half a Gran", distance: 36),
-        RideEntry(rideTitle: "Century Ride with Jim", distance: 105)
-    ]
     
+    let defaults = NSUserDefaults.standardUserDefaults()
     let darkGreyBackgroundColor: UIColor = UIColor(colorLiteralRed: 66/255, green: 66/255, blue: 66/255, alpha: 1.0)
     
+    var rideEntries: [RideEntry] = [] {
+//        RideEntry(rideTitle: "Century Ride with Jim", distance: 105),
+//        RideEntry(rideTitle: "Half a Gran", distance: 36),
+//        RideEntry(rideTitle: "Reverse Inaugural", distance: 29),
+//        RideEntry(rideTitle: "Cedar Falls and Flowers", distance: 37),
+//        RideEntry(rideTitle: "Waukon Loop", distance: 53),
+//        RideEntry(rideTitle: "Castalia", distance: 42),
+//        RideEntry(rideTitle: "Prairie Farm Trial", distance: 50),
+//        RideEntry(rideTitle: "Kendalville Ride", distance: 49),
+//        RideEntry(rideTitle: "Madison Loop", distance: 27),
+//        RideEntry(rideTitle: "First Ride", distance: 13),
+//        ]
+        didSet {
+            let encodedEntries = NSKeyedArchiver.archivedDataWithRootObject(rideEntries)
+            defaults.setObject(encodedEntries, forKey: Storyboard.RideEntreisObjectKey)
+        }
+    }
     
     
     private struct Storyboard {
         static let CellReuseIdentifier = "RideEntryCell"
+        static let RideEntreisObjectKey = "SavedRideEntries"
+    }
+    
+    func updateUI() {
+        loadDefaults()
+        self.tableView.reloadData()
+    }
+    
+    func loadDefaults() {
+        if let decodedEntries = defaults.objectForKey(Storyboard.RideEntreisObjectKey) as? NSData {
+            if let entries = NSKeyedUnarchiver.unarchiveObjectWithData(decodedEntries) as? [RideEntry] {
+                rideEntries = entries
+            }
+        }
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.backgroundColor = darkGreyBackgroundColor
+        
+        loadDefaults()
+        
+        self.refreshControl?.addTarget(self, action: #selector(RideTableViewController.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+    func handleRefresh(refreshControl: UIRefreshControl) {
+        updateUI()
+        refreshControl.endRefreshing()
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        updateUI()
+    }
+    
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return rideEntries.count
@@ -59,7 +89,6 @@ class RideTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         rideEntries.removeAtIndex(indexPath.row)
-        print(rideEntries)
         tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
     }
     
@@ -67,7 +96,7 @@ class RideTableViewController: UITableViewController {
         if let dvc = segue.destinationViewController as? ViewEditEntryViewController {
             if let rideEntryCell = sender as? RideEntryTableViewCell {
                 dvc.rideEntry = rideEntryCell.rideEntry
-                print("Here", rideEntryCell.rideEntry)
+                dvc.image = rideEntryCell.rideImageView.image
             }
         }
     }
