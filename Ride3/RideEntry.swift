@@ -11,26 +11,26 @@ import UIKit
 class RideEntry: NSObject, NSCoding {
     var title: String?
     var distance: Float?
+    var time: Float?
 
     
-    init(rideTitle: String, distance: Float) {
+    init(rideTitle: String, distance: Float, time: Float) {
         self.title = rideTitle
         self.distance = distance
+        self.time = time
     }
     
-//    init(json: [String: AnyObject]) {
-//        self.title = json["title"] as? String
-//        self.distance = json["distance"] as? Float
-//    }
     
     required convenience init(coder aDecoder: NSCoder) {
         let t = aDecoder.decodeObjectForKey("title") as! String
         let d = aDecoder.decodeFloatForKey("distance")
-        self.init(rideTitle: t, distance: d)
+        let ti = aDecoder.decodeFloatForKey("time")
+        self.init(rideTitle: t, distance: d, time: ti)
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(title!, forKey: "title")
         aCoder.encodeFloat(distance!, forKey: "distance")
+        aCoder.encodeFloat(time!, forKey: "time")
     }
 }

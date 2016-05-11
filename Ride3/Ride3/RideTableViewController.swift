@@ -14,17 +14,17 @@ class RideTableViewController: UITableViewController {
     let darkGreyBackgroundColor: UIColor = UIColor(colorLiteralRed: 66/255, green: 66/255, blue: 66/255, alpha: 1.0)
     
     var rideEntries: [RideEntry] = [] {
-//        RideEntry(rideTitle: "Century Ride with Jim", distance: 105),
-//        RideEntry(rideTitle: "Half a Gran", distance: 36),
-//        RideEntry(rideTitle: "Reverse Inaugural", distance: 29),
-//        RideEntry(rideTitle: "Cedar Falls and Flowers", distance: 37),
-//        RideEntry(rideTitle: "Waukon Loop", distance: 53),
-//        RideEntry(rideTitle: "Castalia", distance: 42),
-//        RideEntry(rideTitle: "Prairie Farm Trial", distance: 50),
-//        RideEntry(rideTitle: "Kendalville Ride", distance: 49),
-//        RideEntry(rideTitle: "Madison Loop", distance: 27),
-//        RideEntry(rideTitle: "First Ride", distance: 13),
-//        ]
+//        RideEntry(rideTitle: "Century Ride with Jim", distance: 105, time: 6.5),
+//        RideEntry(rideTitle: "Half a Gran", distance: 36, time: 2.5),
+//        RideEntry(rideTitle: "Reverse Inaugural", distance: 29, time: 2),
+//        RideEntry(rideTitle: "Cedar Falls and Flowers", distance: 37, time: 2.5),
+//        RideEntry(rideTitle: "Waukon Loop", distance: 53, time: 3.25),
+//        RideEntry(rideTitle: "Castalia", distance: 42, time: 3.75),
+//        RideEntry(rideTitle: "Prairie Farm Trial", distance: 50, time: 3),
+//        RideEntry(rideTitle: "Kendalville Ride", distance: 49, time: 3),
+//        RideEntry(rideTitle: "Madison Loop", distance: 27, time: 1.75),
+//        RideEntry(rideTitle: "First Ride", distance: 13, time: 1),
+//        ] {
         didSet {
             let encodedEntries = NSKeyedArchiver.archivedDataWithRootObject(rideEntries)
             defaults.setObject(encodedEntries, forKey: Storyboard.RideEntreisObjectKey)
@@ -78,7 +78,7 @@ class RideTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.CellReuseIdentifier, forIndexPath: indexPath) as! RideEntryTableViewCell
         let entry = rideEntries[indexPath.row]
         
-        cell.configure(entry)
+        cell.configure(entry, index: indexPath.row)
         
         return cell
     }
@@ -90,6 +90,17 @@ class RideTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         rideEntries.removeAtIndex(indexPath.row)
         tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+        
+        let seconds = 0.25
+        let delay = seconds * Double(NSEC_PER_SEC)  // nanoseconds per seconds
+        let dispatchTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        
+        dispatch_after(dispatchTime, dispatch_get_main_queue(), {
+            
+            // code perfomed with delay
+            self.updateUI()
+            
+        })
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -97,6 +108,7 @@ class RideTableViewController: UITableViewController {
             if let rideEntryCell = sender as? RideEntryTableViewCell {
                 dvc.rideEntry = rideEntryCell.rideEntry
                 dvc.image = rideEntryCell.rideImageView.image
+                dvc.entryIndex = rideEntryCell.entryIndex
             }
         }
     }

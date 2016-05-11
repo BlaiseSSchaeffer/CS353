@@ -19,6 +19,7 @@
 		161D4EB01CD298AF00287F61 /* RideTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161D4EAF1CD298AF00287F61 /* RideTableViewController.swift */; };
 		161D4EB21CD29B3000287F61 /* RideNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161D4EB11CD29B3000287F61 /* RideNavigationController.swift */; };
 		161D4EB41CD29CFE00287F61 /* RideEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161D4EB31CD29CFE00287F61 /* RideEntryTableViewCell.swift */; };
+		168051381CDD8E1E0074CF00 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168051371CDD8E1E0074CF00 /* StatsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		161D4EAF1CD298AF00287F61 /* RideTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideTableViewController.swift; sourceTree = "<group>"; };
 		161D4EB11CD29B3000287F61 /* RideNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideNavigationController.swift; sourceTree = "<group>"; };
 		161D4EB31CD29CFE00287F61 /* RideEntryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideEntryTableViewCell.swift; sourceTree = "<group>"; };
+		168051371CDD8E1E0074CF00 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				161D4EB31CD29CFE00287F61 /* RideEntryTableViewCell.swift */,
 				160D51881CD5B72100AA5B63 /* ViewEditEntryViewController.swift */,
 				160D51861CD5958F00AA5B63 /* NewRideEntryViewController.swift */,
+				168051371CDD8E1E0074CF00 /* StatsViewController.swift */,
 				161D4E821CD2905800287F61 /* Main.storyboard */,
 				161D4E7E1CD2905800287F61 /* AppDelegate.swift */,
 				160D51831CD5640700AA5B63 /* RideObjects */,
@@ -293,6 +296,7 @@
 			files = (
 				160D51871CD5958F00AA5B63 /* NewRideEntryViewController.swift in Sources */,
 				161D4EB41CD29CFE00287F61 /* RideEntryTableViewCell.swift in Sources */,
+				168051381CDD8E1E0074CF00 /* StatsViewController.swift in Sources */,
 				161D4E7F1CD2905800287F61 /* AppDelegate.swift in Sources */,
 				161D4EB21CD29B3000287F61 /* RideNavigationController.swift in Sources */,
 				160D51851CD5642900AA5B63 /* RideEntry.swift in Sources */,
