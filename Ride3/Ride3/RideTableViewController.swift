@@ -104,7 +104,7 @@ class RideTableViewController: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let dvc = segue.destinationViewController as? ViewEditEntryViewController {
+        if let dvc = segue.destinationViewController as? ViewEditEntryViewController { // as? RideNavigationController)?.topViewController as? ViewEditEntryViewController {
             if let rideEntryCell = sender as? RideEntryTableViewCell {
                 dvc.rideEntry = rideEntryCell.rideEntry
                 dvc.image = rideEntryCell.rideImageView.image
